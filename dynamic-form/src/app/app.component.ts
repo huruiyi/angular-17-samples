@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {AsyncPipe} from '@angular/common';
+import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 
-import {DynamicFormComponent} from './dynamic-form.component';
+import { DynamicFormComponent } from './dynamic-form.component';
 
-import {QuestionService} from './question.service';
-import {QuestionBase} from './question-base';
-import {Observable} from 'rxjs';
+import { QuestionService } from './question.service';
+import { QuestionBase } from './question-base';
+import { Observable } from 'rxjs';
 
 @Component({
   standalone: true,

@@ -1,4 +1,4 @@
-import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/platform-browser';
+import {bootstrapApplication, provideProtractorTestingSupport} from '@angular/platform-browser';
 
 import {AppComponent} from './app/app.component';
 

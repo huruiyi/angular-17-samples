@@ -8,6 +8,7 @@ button {
   max-width: 600px;
   padding: 4px;
 }
+
 .choices {
   font-style: italic;
 }
@@ -41,9 +42,9 @@ td, th {
   vertical-align: top;
 }
 
-p span { 
-  color: red; 
-  font-size: 70%; 
+p span {
+  color: red;
+  font-size: 70%;
 }
 
 .unless {

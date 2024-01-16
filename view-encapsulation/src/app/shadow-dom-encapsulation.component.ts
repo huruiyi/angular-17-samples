@@ -15,4 +15,5 @@ import {EmulatedEncapsulationComponent} from './emulated-encapsulation.component
   encapsulation: ViewEncapsulation.ShadowDom,
   imports: [NoEncapsulationComponent, EmulatedEncapsulationComponent],
 })
-export class ShadowDomEncapsulationComponent {}
+export class ShadowDomEncapsulationComponent {
+}

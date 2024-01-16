@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -21,6 +21,7 @@ import {CommonModule} from '@angular/common';
 })
 export class LittleTourComponent {
   heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+
   addHero(newHero: string) {
     if (newHero) {
       this.heroes.push(newHero);

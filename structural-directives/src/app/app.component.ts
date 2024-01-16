@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import {heroSwitchComponents} from './hero-switch.components';
-import {HeroComponent} from './hero.component';
-import {UnlessDirective} from './unless.directive';
-import {TrigonometryDirective} from './trigonometry.directive';
+import { heroSwitchComponents } from './hero-switch.components';
+import { HeroComponent } from './hero.component';
+import { UnlessDirective } from './unless.directive';
+import { TrigonometryDirective } from './trigonometry.directive';
 
-import {Hero, heroes} from './hero';
+import { Hero, heroes } from './hero';
 
 @Component({
   standalone: true,

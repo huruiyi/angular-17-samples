@@ -4,7 +4,6 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { AppComponent } from '../app/app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { SubmitButtonComponent } from '../app/submit-button.component';
 
 const routes: Routes = [{
     path: 'lazy',
@@ -17,17 +16,12 @@ const routes: Routes = [{
   }];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SubmitButtonComponent
-  ],
   imports: [
     FormsModule,
     BrowserModule,
-    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    AppComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent],
   exports: [RouterModule]
 })
 export class AppModule { }

@@ -20,4 +20,5 @@ import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

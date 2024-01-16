@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {CompWithHostBindingComponent} from './comp-with-host-binding.component';
-import {MyInputWithAttributeDecoratorComponent} from './my-input-with-attribute-decorator.component';
+import { Component } from '@angular/core';
+import { CompWithHostBindingComponent } from './comp-with-host-binding.component';
+import { MyInputWithAttributeDecoratorComponent } from './my-input-with-attribute-decorator.component';
 
 @Component({
   standalone: true,

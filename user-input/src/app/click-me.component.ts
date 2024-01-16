@@ -2,12 +2,13 @@
   <button type="button" (click)="onClickMe()">Click me!</button>
 */
 
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-click-me',
-  template: ` <button type="button" (click)="onClickMe()">Click me!</button>
+  template: `
+    <button type="button" (click)="onClickMe()">Click me!</button>
     {{ clickMessage }}`,
 })
 export class ClickMeComponent {

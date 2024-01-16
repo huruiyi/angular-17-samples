@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {NgFor} from '@angular/common';
-import {HeroDetailComponent} from '../hero-detail/hero-detail.component';
-import {Hero} from '../hero';
-import {HEROES} from '../mock-heroes';
+import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   standalone: true,

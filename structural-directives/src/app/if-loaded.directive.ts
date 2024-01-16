@@ -1,6 +1,6 @@
-import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
-import {Loaded, LoadingState} from './loading-state';
+import { Loaded, LoadingState } from './loading-state';
 
 @Directive({
   standalone: true,
@@ -22,7 +22,8 @@ export class IfLoadedDirective<T> {
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
     private readonly templateRef: TemplateRef<unknown>,
-  ) {}
+  ) {
+  }
 
   static ngTemplateGuard_appIfLoaded<T>(
     dir: IfLoadedDirective<T>,

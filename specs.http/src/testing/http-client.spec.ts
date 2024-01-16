@@ -19,7 +19,7 @@ describe('HttpClient testing', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ]
+      imports: [HttpClientTestingModule]
     });
 
     // Inject the http service and test controller for each test
@@ -36,10 +36,10 @@ describe('HttpClient testing', () => {
 
     // Make an HTTP GET request
     httpClient.get<Data>(testUrl)
-      .subscribe(data =>
-        // When observable resolves, result should match test data
-        expect(data).toEqual(testData)
-      );
+    .subscribe(data =>
+      // When observable resolves, result should match test data
+      expect(data).toEqual(testData)
+    );
 
     // The following `expectOne()` will match the request's URL.
     // If no requests or multiple requests matched that URL
@@ -62,13 +62,13 @@ describe('HttpClient testing', () => {
 
     // Make an HTTP GET request with specific header
     httpClient.get<Data>(testUrl, {
-        headers: new HttpHeaders({Authorization: 'my-auth-token'})
-      })
-      .subscribe(data =>
-        expect(data).toEqual(testData)
-      );
+      headers: new HttpHeaders({Authorization: 'my-auth-token'})
+    })
+    .subscribe(data =>
+      expect(data).toEqual(testData)
+    );
 
-      // Find request with a predicate function.
+    // Find request with a predicate function.
     // Expect one request with an authorization header
     const req = httpTestingController.expectOne(
       request => request.headers.has('Authorization')
@@ -78,19 +78,19 @@ describe('HttpClient testing', () => {
 
   it('can test multiple requests', () => {
     const testData: Data[] = [
-      { name: 'bob' }, { name: 'carol' },
-      { name: 'ted' }, { name: 'alice' }
+      {name: 'bob'}, {name: 'carol'},
+      {name: 'ted'}, {name: 'alice'}
     ];
 
     // Make three requests in a row
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d.length).withContext('should have no data').toEqual(0));
+    .subscribe(d => expect(d.length).withContext('should have no data').toEqual(0));
 
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).withContext('should be one element array').toEqual([testData[0]]));
+    .subscribe(d => expect(d).withContext('should be one element array').toEqual([testData[0]]));
 
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).withContext('should be expected data').toEqual(testData));
+    .subscribe(d => expect(d).withContext('should be expected data').toEqual(testData));
 
     // get all pending requests that match the given URL
     const requests = httpTestingController.match(testUrl);
@@ -116,7 +116,7 @@ describe('HttpClient testing', () => {
     const req = httpTestingController.expectOne(testUrl);
 
     // Respond with mock error
-    req.flush(emsg, { status: 404, statusText: 'Not Found' });
+    req.flush(emsg, {status: 404, statusText: 'Not Found'});
   });
 
   it('can test for network error', done => {

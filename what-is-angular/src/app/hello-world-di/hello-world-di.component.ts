@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Logger} from '../logger.service';
+import { Component } from '@angular/core';
+import { Logger } from '../logger.service';
 
 @Component({
   standalone: true,
@@ -10,7 +10,8 @@ import {Logger} from '../logger.service';
 export class HelloWorldDependencyInjectionComponent {
   count = 0;
 
-  constructor(private logger: Logger) {}
+  constructor(private logger: Logger) {
+  }
 
   onLogMe() {
     this.logger.writeCount(this.count);

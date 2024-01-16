@@ -20,9 +20,9 @@ import { UniqueAlterEgoValidator } from '../shared/alter-ego.directive';
 export class HeroFormReactiveComponent implements OnInit {
   powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
 
-  hero = { name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0] };
+  hero = {name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0]};
 
-  heroForm: FormGroup;
+  heroForm!: FormGroup;
 
   ngOnInit(): void {
     const alterEgoControl = new FormControl('', {
@@ -56,5 +56,6 @@ export class HeroFormReactiveComponent implements OnInit {
     return this.heroForm.get('alterEgo');
   }
 
-  constructor(private alterEgoValidator: UniqueAlterEgoValidator) {}
+  constructor(private alterEgoValidator: UniqueAlterEgoValidator) {
+  }
 }

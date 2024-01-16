@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -35,6 +35,7 @@ export class KeyUpComponent_v1 {
 })
 export class KeyUpComponent_v2 {
   values = '';
+
   onKey(value: string) {
     this.values += value + ' | ';
   }
@@ -52,6 +53,7 @@ export class KeyUpComponent_v2 {
 })
 export class KeyUpComponent_v3 {
   value = '';
+
   onEnter(value: string) {
     this.value = value;
   }
@@ -70,6 +72,7 @@ export class KeyUpComponent_v3 {
 })
 export class KeyUpComponent_v4 {
   value = '';
+
   update(value: string) {
     this.value = value;
   }

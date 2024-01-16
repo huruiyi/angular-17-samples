@@ -1,5 +1,4 @@
-
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -13,6 +12,7 @@ import {Component} from '@angular/core';
 export class HelloWorldTemplateComponent {
   message = 'I am read only!';
   canEdit = false;
+
   onEditClick() {
     this.canEdit = !this.canEdit;
     if (this.canEdit) {

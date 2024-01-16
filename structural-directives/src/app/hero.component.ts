@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {IfLoadedDirective} from './if-loaded.directive';
+import { IfLoadedDirective } from './if-loaded.directive';
 
-import {LoadingState} from './loading-state';
-import {Hero, heroes} from './hero';
+import { LoadingState } from './loading-state';
+import { Hero, heroes } from './hero';
 
 @Component({
   standalone: true,

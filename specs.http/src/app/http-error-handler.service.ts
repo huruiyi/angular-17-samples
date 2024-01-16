@@ -12,7 +12,8 @@ export type HandleError =
 /** Handles HttpClient errors */
 @Injectable()
 export class HttpErrorHandler {
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) {
+  }
 
   /** Create curried handleError function that already knows the service name */
   createHandleError = (serviceName = '') =>
@@ -35,13 +36,13 @@ export class HttpErrorHandler {
 
       const message = (error.error instanceof ErrorEvent) ?
         error.error.message :
-       `server returned code ${error.status} with body "${error.error}"`;
+        `server returned code ${error.status} with body "${error.error}"`;
 
       // TODO: better job of transforming error for user consumption
       this.messageService.add(`${serviceName}: ${operation} failed: ${message}`);
 
       // Let the app keep running by returning a safe result.
-      return of( result );
+      return of(result);
     };
 
   }

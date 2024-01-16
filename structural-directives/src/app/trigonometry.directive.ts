@@ -1,4 +1,4 @@
-import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
   standalone: true,
@@ -23,7 +23,8 @@ export class TrigonometryDirective {
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
     private readonly templateRef: TemplateRef<TrigonometryContext>,
-  ) {}
+  ) {
+  }
 
   // Make sure the template checker knows the type of the context with which the
   // template of this directive will be rendered

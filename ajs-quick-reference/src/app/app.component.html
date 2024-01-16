@@ -1,4 +1,4 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 
 <h3>Routed Movies</h3>
 <nav>
@@ -27,10 +27,12 @@
 <p></p>
 <div>
   <button type="button" (click)="toggleImage()">
-  Image Toggle #1</button>
+    Image Toggle #1
+  </button>
   <button type="button" (click)="toggleImage($event)">
-  Image Toggle #2</button>
-  <p>Image toggle event type was {{eventType}}</p>
+    Image Toggle #2
+  </button>
+  <p>Image toggle event type was {{ eventType }}</p>
 </div>
 
 <p></p>
@@ -47,29 +49,30 @@
 </div>
 
 <h3>Movie as JSON</h3>
-<pre>{{movie | json}}</pre>
+<pre>{{ movie | json }}</pre>
 
 <h3>Movie Titles via local variable</h3>
 <table>
-<tr *ngFor="let movie of movies">
-  <td>{{movie.title}}</td>
-</tr>
+  <tr *ngFor="let movie of movies">
+    <td>{{ movie.title }}</td>
+  </tr>
 </table>
 
 <h3>Sliced Movies with pipes</h3>
 <table>
-<tr *ngFor="let movie of movies | slice:0:2">
+  <tr *ngFor="let movie of movies | slice:0:2">
 
-  <td>{{movie.title | uppercase}}</td>
+    <td>{{ movie.title | uppercase }}</td>
 
-  <td>{{movie.title | lowercase}}</td>
+    <td>{{ movie.title | lowercase }}</td>
 
-  <td>{{movie.releaseDate | date}}</td>
+    <td>{{ movie.releaseDate | date }}</td>
 
-  <td>{{movie.price | currency:'USD':true}}</td>
+    <td>{{ movie.price | currency:'USD':true }}</td>
 
-  <td>{{movie.starRating | number}}</td>
-  <td>{{movie.starRating | number:'1.1-2'}}</td>
-  <td>{{movie.approvalRating | percent: '1.0-2'}}</td>
+    <td>{{ movie.starRating | number }}</td>
+    <td>{{ movie.starRating | number:'1.1-2' }}</td>
+    <td>{{ movie.approvalRating | percent: '1.0-2' }}</td>
 
-</tr></table>
+  </tr>
+</table>

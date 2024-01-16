@@ -10,4 +10,5 @@ import { CustomersComponent } from './customers.component';
   ],
   declarations: [CustomersComponent]
 })
-export class CustomersModule { }
+export class CustomersModule {
+}

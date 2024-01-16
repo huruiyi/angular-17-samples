@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {Item} from './item';
+import { Component } from '@angular/core';
+import { Item } from './item';
 
-import {ItemDetailComponent} from './item-detail/item-detail.component';
-import {ClickDirective} from './click.directive';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ClickDirective } from './click.directive';
 
 @Component({
   standalone: true,

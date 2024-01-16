@@ -17,9 +17,9 @@ export class QuestionService {
         key: 'brave',
         label: 'Bravery Rating',
         options: [
-          {key: 'solid',  value: 'Solid'},
-          {key: 'great',  value: 'Great'},
-          {key: 'good',   value: 'Good'},
+          {key: 'solid', value: 'Solid'},
+          {key: 'great', value: 'Great'},
+          {key: 'good', value: 'Good'},
           {key: 'unproven', value: 'Unproven'}
         ],
         order: 3

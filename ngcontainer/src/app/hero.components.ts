@@ -36,6 +36,7 @@ export class ConfusedHeroComponent {
 })
 export class UnknownHeroComponent {
   @Input() hero!: Hero;
+
   get message() {
     return this.hero && this.hero.name
       ? `${this.hero.name} is strange and mysterious.`

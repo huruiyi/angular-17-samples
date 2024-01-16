@@ -1,13 +1,13 @@
-import {Component, Injector} from '@angular/core';
-import {createCustomElement} from '@angular/elements';
-import {PopupComponent} from './popup.component';
-import {PopupService} from './popup.service';
+import { Component, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+import { PopupComponent } from './popup.component';
+import { PopupService } from './popup.service';
 
 @Component({
   standalone: true,
   selector: 'app-root',
   template: `
-    <input #input value="Message" />
+    <input #input value="Message"/>
     <button type="button" (click)="popup.showAsComponent(input.value)">Show as component</button>
     <button type="button" (click)="popup.showAsElement(input.value)">Show as element</button>
   `,

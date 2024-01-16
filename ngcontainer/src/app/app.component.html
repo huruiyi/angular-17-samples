@@ -1,6 +1,6 @@
 <h1>&lt;ng-container&gt;</h1>
 
-<div *ngIf="hero">{{hero.name}}</div>
+<div *ngIf="hero">{{ hero.name }}</div>
 
 <hr>
 
@@ -13,14 +13,14 @@
 <p>
   I turned the corner
   <ng-container *ngIf="hero">
-    and saw {{hero.name}}. I waved
+    and saw {{ hero.name }}. I waved
   </ng-container>
   and continued on my way.
 </p>
 <p>
   I turned the corner
   <span *ngIf="hero">
-    and saw {{hero.name}}. I waved
+    and saw {{ hero.name }}. I waved
   </span>
   and continued on my way.
 </p>
@@ -29,26 +29,27 @@
 
 <div *ngIf="hero">
   <p>
-    {{hero.name}} is
+    {{ hero.name }} is
     <ng-container *ngFor="let trait of heroTraits; let first=first; let last=last">
       <ng-container *ngIf="!first">,</ng-container>
       <ng-container *ngIf="last">and</ng-container>
-      {{trait}}
-    </ng-container>.
+      {{ trait }}
+    </ng-container>
+    .
   </p>
 
   <p>
-    {{hero.name}} is
+    {{ hero.name }} is
     <span *ngFor="let trait of heroTraits; let first=first; let last=last">
       <span *ngIf="!first">,</span>
       <span *ngIf="last">and</span>
-      {{trait}}
+      {{ trait }}
     </span>.
   </p>
 
-<br>
+  <br>
 
-<h4>#3 &lt;ng-container&gt; and &lt;p&gt;</h4>
+  <h4>#3 &lt;ng-container&gt; and &lt;p&gt;</h4>
   <p>
     <label for="showId"><input id="showId" type="checkbox" [checked]="showId" (change)="showId=!showId">Show ID</label>
   </p>
@@ -58,9 +59,9 @@
     is caught by the <span>p-span</span> CSS:
     <p>
       <span *ngIf="showId">
-        Id: ({{hero.id}})
+        Id: ({{ hero.id }})
       </span>
-      Name: {{hero.name}}
+      Name: {{ hero.name }}
     </p>
   </div>
 
@@ -69,9 +70,9 @@
     is unaffected by the <span>p-span</span> CSS:
     <p>
       <ng-container *ngIf="showId">
-        Id: ({{hero.id}})
+        Id: ({{ hero.id }})
       </ng-container>
-      Name: {{hero.name}}
+      Name: {{ hero.name }}
     </p>
   </div>
 
@@ -79,9 +80,9 @@
     The <code>hero.id</code> in the &lt;ng-template *ngIf&gt; disappears:
     <p>
       <ng-template *ngIf="showId">
-        Id: ({{hero.id}})
+        Id: ({{ hero.id }})
       </ng-template>
-      Name: {{hero.name}}
+      Name: {{ hero.name }}
     </p>
   </div>
 
@@ -90,9 +91,9 @@
     is unaffected by the <span>p-span</span> CSS:
     <p>
       <ng-template [ngIf]="showId">
-        Id: ({{hero.id}})
+        Id: ({{ hero.id }})
       </ng-template>
-      Name: {{hero.name}}
+      Name: {{ hero.name }}
     </p>
   </div>
 
@@ -112,14 +113,14 @@
 <div>
   Pick your favorite hero
   (<label for="favorite-hero">
-    <input id="favorite-hero" type="checkbox" checked (change)="showSad=!showSad">
-    show sad
-  </label>)
+  <input id="favorite-hero" type="checkbox" checked (change)="showSad=!showSad">
+  show sad
+</label>)
 </div>
 <select [(ngModel)]="hero">
   <span *ngFor="let h of heroes">
     <span *ngIf="showSad || h?.emotion !== 'sad'">
-      <option [ngValue]="h">{{h.name}} ({{h?.emotion}})</option>
+      <option [ngValue]="h">{{ h.name }} ({{ h?.emotion }})</option>
     </span>
   </span>
 </select>
@@ -132,7 +133,7 @@
 <select [(ngModel)]="hero">
   <ng-container *ngFor="let h of heroes">
     <ng-container *ngIf="showSad || h?.emotion !== 'sad'">
-      <option [ngValue]="h">{{h.name}} ({{h?.emotion}})</option>
+      <option [ngValue]="h">{{ h.name }} ({{ h?.emotion }})</option>
     </ng-container>
   </ng-container>
 </select>
@@ -143,8 +144,8 @@
 <p>
   <label for="default-traits" (change)="traitPicker.value=showDefaultTraits ? 'loyal' : heroTraits[0]">
     <input id="default-traits" type="checkbox"
-          [checked]="showDefaultTraits"
-          (change)="showDefaultTraits=!showDefaultTraits">Show default traits
+           [checked]="showDefaultTraits"
+           (change)="showDefaultTraits=!showDefaultTraits">Show default traits
   </label>
 </p>
 
@@ -202,37 +203,51 @@
   </tr>
 
   <tr *ngIf="attrDirs">
-    <td>NgClass</td><td>A</td><td>Add or remove multiple CSS classes.</td>
+    <td>NgClass</td>
+    <td>A</td>
+    <td>Add or remove multiple CSS classes.</td>
   </tr>
 
-<ng-container *ngIf="divNgIf">
-  <div *ngIf="strucDirs">
-    <tr>
-      <td>xxx</td><td>S</td><td>div with *ngIf formats crazy.</td>
-    </tr>
-    <tr>
-      <td>yyy</td><td>S</td><td>div with *ngIf formats crazy.</td>
-    </tr>
-  </div>
-</ng-container>
+  <ng-container *ngIf="divNgIf">
+    <div *ngIf="strucDirs">
+      <tr>
+        <td>xxx</td>
+        <td>S</td>
+        <td>div with *ngIf formats crazy.</td>
+      </tr>
+      <tr>
+        <td>yyy</td>
+        <td>S</td>
+        <td>div with *ngIf formats crazy.</td>
+      </tr>
+    </div>
+  </ng-container>
 
   <ng-container *ngIf="strucDirs">
     <tr>
-      <td>NgFor</td><td>S</td><td>Repeat the template for each item in a list.</td>
+      <td>NgFor</td>
+      <td>S</td>
+      <td>Repeat the template for each item in a list.</td>
     </tr>
     <tr>
-      <td>NgIf</td><td>S</td><td>Add or remove DOM elements.</td>
+      <td>NgIf</td>
+      <td>S</td>
+      <td>Add or remove DOM elements.</td>
     </tr>
   </ng-container>
 
   <ng-container *ngIf="attrDirs">
     <tr>
-      <td>NgStyle</td><td>A</td><td>Add or remove multiple style attributes.</td>
+      <td>NgStyle</td>
+      <td>A</td>
+      <td>Add or remove multiple style attributes.</td>
     </tr>
   </ng-container>
 
   <tr *ngIf="strucDirs">
-    <td>NgSwitch</td><td>S</td><td>Include in DOM if case matches the switch value.</td>
+    <td>NgSwitch</td>
+    <td>S</td>
+    <td>Include in DOM if case matches the switch value.</td>
   </tr>
 
 </table>
@@ -247,7 +262,8 @@
 <p>&lt;ng-content&gt;this is an Angular parse error&lt;/ng-content&gt;</p>
 <!--  <ng-content>this is an Angular parse error</ng-content>  -->
 <div class="code">Template parse errors:<br>
-&lt;ng-content&gt; element cannot have content.</div>
+  &lt;ng-content&gt; element cannot have content.
+</div>
 
 <p>Demo of &lt;/ng-content&gt;</p>
 <content-comp>

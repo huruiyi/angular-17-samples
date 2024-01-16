@@ -17,7 +17,7 @@ import { MovieService } from './movie.service';
     NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault,
     CurrencyPipe, DatePipe, DecimalPipe, PercentPipe, UpperCasePipe
   ],
-  styleUrls: [ './movie-list.component.css' ],
+  styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent {
   favoriteHero: string | undefined;
@@ -33,6 +33,6 @@ export class MovieListComponent {
   }
 
   checkMovieHero(value: string): boolean {
-    return this.movies.filter(movie => movie.hero === value).length > 0 ;
+    return this.movies.filter(movie => movie.hero === value).length > 0;
   }
 }

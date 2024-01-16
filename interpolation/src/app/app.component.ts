@@ -7,7 +7,7 @@ import { CUSTOMERS } from './customers';
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  imports: [ NgFor ],
+  imports: [NgFor],
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -20,9 +20,8 @@ export class AppComponent {
   recommended = 'You might also like:';
   itemImageUrl2 = '../assets/lamp.svg';
 
-
-
-  getVal(): number { return 2; }
-
+  getVal(): number {
+    return 2;
+  }
 
 }

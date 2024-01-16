@@ -26,7 +26,8 @@ export class AppComponent {
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
-  constructor(private contexts: ChildrenOutletContexts) {}
+  constructor(private contexts: ChildrenOutletContexts) {
+  }
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];

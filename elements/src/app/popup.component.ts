@@ -1,5 +1,5 @@
-import {Component, EventEmitter, HostBinding, Input, Output} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   standalone: true,
@@ -46,10 +46,12 @@ export class PopupComponent {
   get message(): string {
     return this._message;
   }
+
   set message(message: string) {
     this._message = message;
     this.state = 'opened';
   }
+
   private _message = '';
 
   @Output()

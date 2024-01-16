@@ -16,7 +16,7 @@ export const transitionAnimation = animation([
 export const slideInAnimation =
   trigger('routeAnimations', [
     transition('HomePage <=> AboutPage', [
-      style({ position: 'relative' }),
+      style({position: 'relative'}),
       query(':enter, :leave', [
         style({
           position: 'absolute',
@@ -26,20 +26,20 @@ export const slideInAnimation =
         })
       ]),
       query(':enter', [
-        style({ left: '-100%' })
-      ], { optional: true }),
-      query(':leave', animateChild(), { optional: true }),
+        style({left: '-100%'})
+      ], {optional: true}),
+      query(':leave', animateChild(), {optional: true}),
       group([
         query(':leave', [
-          animate('300ms ease-out', style({ left: '100%' }))
-        ], { optional: true }),
+          animate('300ms ease-out', style({left: '100%'}))
+        ], {optional: true}),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ], { optional: true }),
+          animate('300ms ease-out', style({left: '0%'}))
+        ], {optional: true}),
       ]),
     ]),
     transition('* <=> *', [
-      style({ position: 'relative' }),
+      style({position: 'relative'}),
       query(':enter, :leave', [
         style({
           position: 'absolute',
@@ -47,19 +47,19 @@ export const slideInAnimation =
           left: 0,
           width: '100%'
         })
-      ], { optional: true }),
+      ], {optional: true}),
       query(':enter', [
-        style({ left: '-100%' })
-      ], { optional: true }),
-      query(':leave', animateChild(), { optional: true }),
+        style({left: '-100%'})
+      ], {optional: true}),
+      query(':leave', animateChild(), {optional: true}),
       group([
         query(':leave', [
-          animate('200ms ease-out', style({ left: '100%', opacity: 0 }))
-        ], { optional: true }),
+          animate('200ms ease-out', style({left: '100%', opacity: 0}))
+        ], {optional: true}),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ], { optional: true }),
-        query('@*', animateChild(), { optional: true })
+          animate('300ms ease-out', style({left: '0%'}))
+        ], {optional: true}),
+        query('@*', animateChild(), {optional: true})
       ]),
     ])
   ]);

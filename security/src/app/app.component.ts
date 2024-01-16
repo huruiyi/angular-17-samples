@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {BypassSecurityComponent} from './bypass-security.component';
-import {InnerHtmlBindingComponent} from './inner-html-binding.component';
+import { Component } from '@angular/core';
+import { BypassSecurityComponent } from './bypass-security.component';
+import { InnerHtmlBindingComponent } from './inner-html-binding.component';
 
 @Component({
   standalone: true,
@@ -12,4 +12,5 @@ import {InnerHtmlBindingComponent} from './inner-html-binding.component';
   `,
   imports: [BypassSecurityComponent, InnerHtmlBindingComponent],
 })
-export class AppComponent {}
+export class AppComponent {
+}

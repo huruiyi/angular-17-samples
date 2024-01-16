@@ -1,9 +1,6 @@
-import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/platform-browser';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
 
-import {AppComponent} from './app/app.component';
-
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideProtractorTestingSupport(), // essential for e2e testing
-  ]
-});
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));

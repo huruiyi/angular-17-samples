@@ -8,7 +8,7 @@ import { HostChildComponent } from '../host-child/host-child.component';
   templateUrl: './host.component.html',
   styleUrls: ['./host.component.css'],
   //  provide the service
-  providers: [{ provide: FlowerService, useValue: { emoji: '🌷' } }],
+  providers: [{ provide: FlowerService, useValue: { emoji1: '🌷' } }],
   imports: [HostChildComponent]
 })
 export class HostComponent {

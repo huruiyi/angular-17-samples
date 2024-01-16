@@ -1,14 +1,16 @@
-import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
-import { NgFor } from '@angular/common';
+import {Component, ContentChild, Input, OnInit, TemplateRef} from '@angular/core';
+import {NgFor} from '@angular/common';
 import {
   FormsModule,
   FormControl,
 } from '@angular/forms';
+import {LazyService} from "./lazy/lazy.service";
+
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  imports: [ FormsModule, NgFor ]
+  imports: [FormsModule, NgFor]
 })
 export class AppComponent implements OnInit {
   title = 'example';
@@ -20,17 +22,13 @@ export class AppComponent implements OnInit {
 
   @Input() tpl !: TemplateRef<any>;
   @ContentChild(TemplateRef) inlineTemplate !: TemplateRef<any>;
-
+c
   ngOnInit() {
-
     this.value = 'some value';
-
     this.setValue();
   }
 
   setValue(): void {
-
     this.control.setValue('some value');
-
   }
 }

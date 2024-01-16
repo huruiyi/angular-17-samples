@@ -4,7 +4,7 @@ import {
   CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, LowerCasePipe, PercentPipe, SlicePipe, UpperCasePipe
 } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterOutlet} from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 import { MovieService } from './movie.service';
 import { IMovie } from './movie';
@@ -19,7 +19,7 @@ import { IMovie } from './movie';
     CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, LowerCasePipe, PercentPipe, SlicePipe, UpperCasePipe,
     RouterLink, RouterOutlet
   ],
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
@@ -32,6 +32,7 @@ export class AppComponent {
   movies: IMovie[] = [];
   showImage = true;
   title = 'AngularJS to Angular Quick Ref Cookbook';
+
   toggleImage(event?: UIEvent) {
     this.showImage = !this.showImage;
     this.eventType = (event && event.type) || 'not provided';

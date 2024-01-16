@@ -17,7 +17,7 @@ describe('HeroesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       // Import the HttpClient mocking services
-      imports: [ HttpClientTestingModule ],
+      imports: [HttpClientTestingModule],
       // Provide the service-under-test and its dependencies
       providers: [
         HeroesService,
@@ -46,9 +46,9 @@ describe('HeroesService', () => {
     beforeEach(() => {
       heroService = TestBed.inject(HeroesService);
       expectedHeroes = [
-        { id: 1, name: 'A' },
-        { id: 2, name: 'B' },
-       ] as Hero[];
+        {id: 1, name: 'A'},
+        {id: 2, name: 'B'},
+      ] as Hero[];
     });
 
     it('should return expected heroes (called once)', () => {
@@ -117,7 +117,7 @@ describe('HeroesService', () => {
 
     it('should update a hero and return it', () => {
 
-      const updateHero: Hero = { id: 1, name: 'A' };
+      const updateHero: Hero = {id: 1, name: 'A'};
 
       heroService.updateHero(updateHero).subscribe({
         next: data => expect(data).toEqual(updateHero, 'should return the hero'),
@@ -131,13 +131,13 @@ describe('HeroesService', () => {
 
       // Expect server to return the hero after PUT
       const expectedResponse = new HttpResponse(
-        { status: 200, statusText: 'OK', body: updateHero });
+        {status: 200, statusText: 'OK', body: updateHero});
       req.event(expectedResponse);
     });
 
     // This service reports the error but finds a way to let the app keep going.
     it('should turn 404 error into return of the update hero', () => {
-      const updateHero: Hero = { id: 1, name: 'A' };
+      const updateHero: Hero = {id: 1, name: 'A'};
 
       heroService.updateHero(updateHero).subscribe({
         next: data => expect(data).toEqual(updateHero, 'should return the update hero'),

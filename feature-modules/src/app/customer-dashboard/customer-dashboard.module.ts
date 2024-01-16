@@ -16,4 +16,5 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
 })
 
 
-export class CustomerDashboardModule { }
+export class CustomerDashboardModule {
+}

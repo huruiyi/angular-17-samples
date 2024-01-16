@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {SizerComponent} from './sizer/sizer.component';
-import {FormsModule} from '@angular/forms';
+import { Component } from '@angular/core';
+import { SizerComponent } from './sizer/sizer.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,

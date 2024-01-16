@@ -16,7 +16,7 @@ export const identityRevealedValidator: ValidatorFn = (
   const alterEgo = control.get('alterEgo');
 
   return name && alterEgo && name.value === alterEgo.value
-    ? { identityRevealed: true }
+    ? {identityRevealed: true}
     : null;
 };
 

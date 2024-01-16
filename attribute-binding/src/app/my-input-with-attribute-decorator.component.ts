@@ -1,4 +1,4 @@
-import {Attribute, Component} from '@angular/core';
+import { Attribute, Component } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -6,5 +6,6 @@ import {Attribute, Component} from '@angular/core';
   template: '<p>The type of the input is: {{ type }}</p>',
 })
 export class MyInputWithAttributeDecoratorComponent {
-  constructor(@Attribute('type') public type: string) {}
+  constructor(@Attribute('type') public type: string) {
+  }
 }

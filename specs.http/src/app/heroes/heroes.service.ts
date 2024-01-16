@@ -10,7 +10,7 @@ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type': 'application/json',
     Authorization: 'my-auth-token'
   })
 };
@@ -29,9 +29,9 @@ export class HeroesService {
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
-      .pipe(
-        catchError(this.handleError('getHeroes', []))
-      );
+    .pipe(
+      catchError(this.handleError('getHeroes', []))
+    );
   }
 
   /* GET heroes whose name contains search term */
@@ -40,12 +40,12 @@ export class HeroesService {
 
     // Add safe, URL encoded search parameter if there is a search term
     const options = term ?
-     { params: new HttpParams().set('name', term) } : {};
+      {params: new HttpParams().set('name', term)} : {};
 
     return this.http.get<Hero[]>(this.heroesUrl, options)
-      .pipe(
-        catchError(this.handleError<Hero[]>('searchHeroes', []))
-      );
+    .pipe(
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
   }
 
   // This JSONP example doesn't run. It is for the JSONP documentation only.
@@ -53,7 +53,9 @@ export class HeroesService {
   heroesSearchUrl = 'https://heroes.com/search';
 
   /** Does whatever is necessary to convert the result from API to Heroes */
-  jsonpResultToHeroes(result: any) { return result as Hero[]; }
+  jsonpResultToHeroes(result: any) {
+    return result as Hero[];
+  }
 
   /* GET heroes (using JSONP) whose name contains search term */
   searchHeroesJsonp(term: string): Observable<Hero[]> {
@@ -61,10 +63,10 @@ export class HeroesService {
 
     const heroesUrl = `${this.heroesSearchUrl}?${term}`;
     return this.http.jsonp(heroesUrl, 'callback')
-      .pipe(
-        map(result => this.jsonpResultToHeroes(result)),
-        catchError(this.handleError('searchHeroes', []))
-      );
+    .pipe(
+      map(result => this.jsonpResultToHeroes(result)),
+      catchError(this.handleError('searchHeroes', []))
+    );
   }
 
   //////// Save methods //////////
@@ -72,18 +74,18 @@ export class HeroesService {
   /** POST: add a new hero to the database */
   addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
-      .pipe(
-        catchError(this.handleError('addHero', hero))
-      );
+    .pipe(
+      catchError(this.handleError('addHero', hero))
+    );
   }
 
   /** DELETE: delete the hero from the server */
   deleteHero(id: number): Observable<unknown> {
     const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
     return this.http.delete(url, httpOptions)
-      .pipe(
-        catchError(this.handleError('deleteHero'))
-      );
+    .pipe(
+      catchError(this.handleError('deleteHero'))
+    );
   }
 
   /** PUT: update the hero on the server. Returns the updated hero upon success. */
@@ -92,8 +94,8 @@ export class HeroesService {
       httpOptions.headers.set('Authorization', 'my-new-auth-token');
 
     return this.http.put<Hero>(this.heroesUrl, hero, httpOptions)
-      .pipe(
-        catchError(this.handleError('updateHero', hero))
-      );
+    .pipe(
+      catchError(this.handleError('updateHero', hero))
+    );
   }
 }

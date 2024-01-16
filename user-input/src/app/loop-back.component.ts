@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+
 @Component({
   standalone: true,
   selector: 'app-loop-back',
@@ -7,4 +8,5 @@ import {Component} from '@angular/core';
     <p>{{ box.value }}</p>
   `,
 })
-export class LoopbackComponent {}
+export class LoopbackComponent {
+}
