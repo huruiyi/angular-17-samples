@@ -7,9 +7,11 @@ import { PopupService } from './popup.service';
   standalone: true,
   selector: 'app-root',
   template: `
-    <input #input value="Message"/>
-    <button type="button" (click)="popup.showAsComponent(input.value)">Show as component</button>
-    <button type="button" (click)="popup.showAsElement(input.value)">Show as element</button>
+    <div class="app-root-div">
+        <input class="root-ele" #msg value="Hello World，世界你好！！！"/>
+        <button class="root-ele" type="button" (click)="popup.showAsComponent(msg.value)">Show as component</button>
+        <button class="root-ele" type="button" (click)="popup.showAsElement(msg.value)">Show as element</button>
+    </div>
   `,
   providers: [PopupService],
   imports: [PopupComponent],

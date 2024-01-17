@@ -6,7 +6,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   selector: 'my-popup',
   template: `
     <span>Popup: {{ message }}</span>
+    <button type="button" (click)="closed.next()">&#x2715;</button>
     <button type="button" (click)="closed.next()">&#x2716;</button>
+    <button type="button" (click)="closed.next()">&#x2713;</button>
+    <button type="button" (click)="closed.next()">&#x2714;</button>
+    <button type="button" (click)="closed.next()">&#x2717;</button>
+    <button type="button" (click)="closed.next()">&#x2718;</button>
+    <button type="button" (click)="closed.next()">&#x00d7;</button>
+    <button type="button" (click)="closed.next()">&times;</button>
   `,
   animations: [
     trigger('state', [
@@ -22,7 +29,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         bottom: 0;
         left: 0;
         right: 0;
-        background: #009cff;
+        background-color: lightpink;
         height: 48px;
         padding: 16px;
         display: flex;
