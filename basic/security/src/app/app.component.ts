@@ -10,7 +10,7 @@ import { InnerHtmlBindingComponent } from './inner-html-binding.component';
     <app-inner-html-binding></app-inner-html-binding>
     <app-bypass-security></app-bypass-security>
   `,
-  imports: [BypassSecurityComponent, InnerHtmlBindingComponent],
+  imports: [ BypassSecurityComponent, InnerHtmlBindingComponent ],
 })
 export class AppComponent {
 }
