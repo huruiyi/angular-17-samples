@@ -6,7 +6,7 @@ import { Hero } from './hero';
   template: `
     <style>
       button {
-        background-color: white;
+        background-color: #fed3d3;
         border: 1px solid #777;
       }
     </style>

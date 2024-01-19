@@ -10,12 +10,13 @@ import { HeroService } from '../hero.service';
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   imports: [ NgFor, RouterLink ],
-  styleUrls: ['./heroes.component.css']
+  styleUrls: [ './heroes.component.css' ]
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService) {
+  }
 
   ngOnInit() {
     this.getHeroes();
@@ -28,11 +29,13 @@ export class HeroesComponent implements OnInit {
 
   add(name: string): void {
     name = name.trim();
-    if (!name) { return; }
+    if (!name) {
+      return;
+    }
     this.heroService.addHero({ name } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
-      });
+    .subscribe(hero => {
+      this.heroes.push(hero);
+    });
   }
 
   delete(hero: Hero): void {

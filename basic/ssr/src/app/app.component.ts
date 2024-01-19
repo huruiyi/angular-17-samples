@@ -11,7 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [ RouterLink, RouterOutlet, MessagesComponent ],
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
   title = 'Tour of Heroes';
@@ -21,7 +21,7 @@ export class AppComponent {
     @Inject(APP_ID) appId: string) {
     const platform = isPlatformBrowser(platformId) ?
       'in the browser' : 'on the server';
-    console.log(`Running ${platform} with appId=${appId}`);
+    console.log(`Running ${ platform } with appId=${ appId }`);
   }
 
 }

@@ -9,7 +9,7 @@ import { Hero } from './hero';
     <h3>Team</h3>
     <ul>
       <li *ngFor="let member of hero.team">
-        {{member}}
+        {{ member }}
       </li>
     </ul>`
 })

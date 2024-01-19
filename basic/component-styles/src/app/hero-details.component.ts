@@ -4,7 +4,7 @@ import { Hero } from './hero';
 @Component({
   selector: 'app-hero-details',
   template: `
-    <h2>{{hero.name}}</h2>
+    <h2>{{ hero.name }}</h2>
     <app-hero-team [hero]=hero></app-hero-team>
     <ng-content></ng-content>
   `,
