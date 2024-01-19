@@ -41,18 +41,18 @@
 <!-- Interpolation and expressions -->
 <hr><h2 id="interpolation">Interpolation</h2>
 
-<p>My current hero is {{currentHero.name}}</p>
+<p>My current hero is {{ currentHero.name }}</p>
 
 <h3>
-  {{title}}
+  {{ title }}
   <img alt="{{hero.name}}" src="{{heroImageUrl}}" style="height:30px">
 </h3>
 
 <!-- "The sum of 1 + 1 is 2" -->
-<p>The sum of 1 + 1 is {{1 + 1}}</p>
+<p>The sum of 1 + 1 is {{ 1 + 1 }}</p>
 
 <!-- "The sum of 1 + 1 is not 4" -->
-<p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}</p>
+<p>The sum of 1 + 1 is not {{ 1 + 1 + getVal() }}</p>
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -60,21 +60,20 @@
 
 <p>Component expression context (&#123;&#123;title&#125;&#125;, [hidden]="isUnchanged")</p>
 <div class="context">
-  {{title}}
+  {{ title }}
   <span [hidden]="isUnchanged">changed</span>
 </div>
-
 
 <p>Template input variable expression context (let hero)</p>
 <!-- template hides the following; plenty of examples later -->
 <ng-template>
-  <div *ngFor="let hero of heroes">{{hero.name}}</div>
+  <div *ngFor="let hero of heroes">{{ hero.name }}</div>
 </ng-template>
 
 <p>Template reference variable expression context (#heroInput)</p>
 <div (keyup)="0" class="context">
   Type something:
-  <input #heroInput> {{heroInput.value}}
+  <input #heroInput> {{ heroInput.value }}
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -94,12 +93,12 @@
 <p>Template input variable statement context (let hero)</p>
 <!-- template hides the following; plenty of examples later -->
 <div class="context">
-  <button type="button" *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
+  <button type="button" *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{ hero.name }}</button>
 </div>
 
 <p>Template reference variable statement context (#heroForm)</p>
 <div class="context">
-  <form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... </form>
+  <form #heroForm (ngSubmit)="onSubmit(heroForm)"> ...</form>
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -138,13 +137,13 @@
 <button type="button" (click)="onSave()">Save</button>
 <app-hero-detail (deleteRequest)="deleteHero()"></app-hero-detail>
 <div (myClick)="clicked=$event" clickable>click me</div>
-{{clicked}}
+{{ clicked }}
 <br><br>
 
 <div>
   Hero Name:
   <input [(ngModel)]="name">
-  {{name}}
+  {{ name }}
 </div>
 <br><br>
 
@@ -155,21 +154,21 @@
 <br><br>
 
 <button type="button" [style.color]="isSpecial ? 'red' : 'green'">
-button</button>
+  button
+</button>
 
 <a class="to-toc" href="#toc">top</a>
-
 
 <!-- property vs. attribute -->
 <hr><h2 id="prop-vs-attrib">Property vs. Attribute (img examples)</h2>
 <!-- examine the following <img> tag in the browser tools -->
 <img src="images/ng-logo.svg"
-    [src]="heroImageUrl" [alt]="hero.name">
+     [src]="heroImageUrl" [alt]="hero.name">
 
 <br><br>
 
-<img [src]="iconUrl" alt="icon"/>
-<img [attr.src]="villainImageUrl" alt="villain-image"/>
+<img [src]="iconUrl" alt="icon" />
+<img [attr.src]="villainImageUrl" alt="villain-image" />
 <a class="to-toc" href="#toc">top</a>
 
 <!-- buttons -->
@@ -208,14 +207,14 @@ button</button>
   is the <em>property bound</em> image.
 </p>
 
-<p><span>"{{title}}" is the <em>interpolated</em> title.</span></p>
+<p><span>"{{ title }}" is the <em>interpolated</em> title.</span></p>
 <p>"<span [innerHTML]="title"></span>" is the <em>property bound</em> title.</p>
 
 <!--
   Angular generates warnings for these two lines as it sanitizes them
   WARNING: sanitizing HTML stripped some content (see https://g.co/ng/security#xss).
  -->
-<p><span>"{{evilTitle}}" is the <em>interpolated</em> evil title.</span></p>
+<p><span>"{{ evilTitle }}" is the <em>interpolated</em> evil title.</span></p>
 <p>"<span [innerHTML]="evilTitle"></span>" is the <em>property bound</em> evil title.</p>
 
 <a class="to-toc" href="#toc">top</a>
@@ -226,18 +225,23 @@ button</button>
 <!--  create and set a colspan attribute -->
 <table border=1>
   <!--  expression calculates colspan=2 -->
-  <tr><td [attr.colspan]="1 + 1">One-Two</td></tr>
+  <tr>
+    <td [attr.colspan]="1 + 1">One-Two</td>
+  </tr>
 
   <!-- ERROR: There is no `colspan` property to set!
     <tr><td colspan="{{1 + 1}}">Three-Four</td></tr>
   -->
 
-  <tr><td>Five</td><td>Six</td></tr>
+  <tr>
+    <td>Five</td>
+    <td>Six</td>
+  </tr>
 </table>
 
 <br>
 <!-- create and set an aria attribute for assistive technology -->
-<button type="button" [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+<button type="button" [attr.aria-label]="actionName">{{ actionName }} with Aria</button>
 <br><br>
 
 <!-- The following effects are not discussed in the chapter -->
@@ -261,14 +265,16 @@ button</button>
 
 <!-- reset/override all class names with a binding  -->
 <div class="bad curly special"
-     [class]="badCurly">Bad curly</div>
+     [class]="badCurly">Bad curly
+</div>
 
 <!-- toggle the "special" class on/off with a property -->
 <div [class.special]="isSpecial">The class binding is special</div>
 
 <!-- binding to `class.special` trumps the class attribute -->
 <div class="special"
-     [class.special]="!isSpecial">This one is not so special</div>
+     [class.special]="!isSpecial">This one is not so special
+</div>
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -276,10 +282,10 @@ button</button>
 <hr><h2 id="style-binding">Style Binding</h2>
 
 <button type="button" [style.color]="isSpecial ? 'red': 'green'">Red</button>
-<button type="button" [style.background-color]="canSave ? 'cyan': 'grey'" >Save</button>
+<button type="button" [style.background-color]="canSave ? 'cyan': 'grey'">Save</button>
 
-<button type="button" [style.font-size.em]="isSpecial ? 3 : 1" >Big</button>
-<button type="button" [style.font-size.%]="!isSpecial ? 150 : 50" >Small</button>
+<button type="button" [style.font-size.em]="isSpecial ? 3 : 1">Big</button>
+<button type="button" [style.font-size.%]="!isSpecial ? 150 : 50">Small</button>
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -289,22 +295,19 @@ button</button>
 <button type="button" (click)="onSave()">Save</button>
 
 <div>
-<!-- `myClick` is an event on the custom `ClickDirective` -->
-<div (myClick)="clickMessage=$event" clickable>click with myClick</div>
-{{clickMessage}}
+  <!-- `myClick` is an event on the custom `ClickDirective` -->
+  <div (myClick)="clickMessage=$event" clickable>click with myClick</div>
+  {{ clickMessage }}
 </div>
-
 
 <!-- binding to a nested component -->
 <app-hero-detail (deleteRequest)="deleteHero($event)" [hero]="currentHero"></app-hero-detail>
 <br>
 
 <app-big-hero-detail
-    (deleteRequest)="deleteHero($event)"
-    [hero]="currentHero">
+  (deleteRequest)="deleteHero($event)"
+  [hero]="currentHero">
 </app-big-hero-detail>
-
-
 
 <div class="parent-div" (click)="onClickMe($event)" clickable>Click me
   <div class="child-div">Click me too!</div>
@@ -319,7 +322,6 @@ button</button>
 <div (click)="onSave()" clickable>
   <button type="button" (click)="onSave()">Save w/ propagation</button>
 </div>
-
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -341,7 +343,7 @@ button</button>
     passing the changed display value to the event handler via `$event` -->
 <hr><h2 id="ngModel">NgModel (two-way) Binding</h2>
 
-<h3>Result: {{currentHero.name}}</h3>
+<h3>Result: {{ currentHero.name }}</h3>
 
 <input [value]="currentHero.name"
        (input)="updateCurrentHeroName($event)">
@@ -365,20 +367,21 @@ without NgModel
 <!-- NgClass binding -->
 <hr><h2 id="ngClass">NgClass Binding</h2>
 
-<p>currentClasses is {{currentClasses | json}}</p>
+<p>currentClasses is {{ currentClasses | json }}</p>
 <div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special</div>
 
 <!-- not used in chapter -->
 <br>
-<label for="canSave">saveable   <input type="checkbox" id="canSave" [(ngModel)]="canSave"></label> |
-<label for="isUnchanged">modified:  <input type="checkbox" id="isUnchanged" [value]="!isUnchanged" (change)="isUnchanged=!isUnchanged"></label> |
-<label for="isSpecial">special:   <input type="checkbox" id="isSpecial" [(ngModel)]="isSpecial"></label>
+<label for="canSave">saveable <input type="checkbox" id="canSave" [(ngModel)]="canSave"></label> |
+<label for="isUnchanged">modified: <input type="checkbox" id="isUnchanged" [value]="!isUnchanged" (change)="isUnchanged=!isUnchanged"></label> |
+<label for="isSpecial">special: <input type="checkbox" id="isSpecial" [(ngModel)]="isSpecial"></label>
 <button type="button" (click)="setCurrentClasses()">Refresh currentClasses</button>
 <br><br>
 <div [ngClass]="currentClasses">
-  This div should be {{ canSave ? "": "not"}} saveable,
-                  {{ isUnchanged ? "unchanged" : "modified" }} and,
-                  {{ isSpecial ? "": "not"}} special after clicking "Refresh".</div>
+  This div should be {{ canSave ? "" : "not" }} saveable,
+  {{ isUnchanged ? "unchanged" : "modified" }} and,
+  {{ isSpecial ? "" : "not" }} special after clicking "Refresh".
+</div>
 <br><br>
 
 <div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
@@ -391,12 +394,12 @@ without NgModel
 <!-- NgStyle binding -->
 <hr><h2 id="ngStyle">NgStyle Binding</h2>
 
-<div [style.font-size]="isSpecial ? 'x-large' : 'smaller'" >
+<div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">
   This div is x-large or smaller.
 </div>
 
 <h3>[ngStyle] binding to currentStyles - CSS property names</h3>
-<p>currentStyles is {{currentStyles | json}}</p>
+<p>currentStyles is {{ currentStyles | json }}</p>
 <div [ngStyle]="currentStyles">
   This div is initially italic, normal weight, and extra large (24px).
 </div>
@@ -409,9 +412,10 @@ without NgModel
 <button type="button" (click)="setCurrentStyles()">Refresh currentStyles</button>
 <br><br>
 <div [ngStyle]="currentStyles">
-  This div should be {{ canSave ? "italic": "plain"}},
-                  {{ isUnchanged ? "normal weight" : "bold" }} and,
-                  {{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".</div>
+  This div should be {{ canSave ? "italic" : "plain" }},
+  {{ isUnchanged ? "normal weight" : "bold" }} and,
+  {{ isSpecial ? "extra large" : "normal size" }} after clicking "Refresh".
+</div>
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -420,12 +424,12 @@ without NgModel
 
 <app-hero-detail *ngIf="isActive"></app-hero-detail>
 
-<div *ngIf="currentHero">Hello, {{currentHero.name}}</div>
-<div *ngIf="nullHero">Hello, {{nullHero.name}}</div>
+<div *ngIf="currentHero">Hello, {{ currentHero.name }}</div>
+<div *ngIf="nullHero">Hello, {{ nullHero.name }}</div>
 
 <!-- NgIf binding with template (no *) -->
 
-<ng-template [ngIf]="currentHero">Add {{currentHero.name}} with template</ng-template>
+<ng-template [ngIf]="currentHero">Add {{ currentHero.name }} with template</ng-template>
 
 <!-- Does not show because isActive is false! -->
 <div>Hero Detail removed from DOM (via template) because isActive is false</div>
@@ -449,7 +453,7 @@ without NgModel
 <hr><h2 id="ngFor">NgFor Binding</h2>
 
 <div class="box">
-  <div *ngFor="let hero of heroes">{{hero.name}}</div>
+  <div *ngFor="let hero of heroes">{{ hero.name }}</div>
 </div>
 <br>
 
@@ -463,13 +467,13 @@ without NgModel
 <h4 id="ngFor-index">*ngFor with index</h4>
 <p>with <em>semi-colon</em> separator</p>
 <div class="box">
-  <div *ngFor="let hero of heroes; let i=index">{{i + 1}} - {{hero.name}}</div>
+  <div *ngFor="let hero of heroes; let i=index">{{ i + 1 }} - {{ hero.name }}</div>
 </div>
 
 <p>with <em>comma</em> separator</p>
 <div class="box">
   <!-- Ex: "1 - Hercules" -->
-  <div *ngFor="let hero of heroes, let i=index">{{i + 1}} - {{hero.name}}</div>
+  <div *ngFor="let hero of heroes, let i=index">{{ i + 1 }} - {{ hero.name }}</div>
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -481,19 +485,19 @@ without NgModel
 
 <p><em>without</em> trackBy</p>
 <div class="box">
-  <div #noTrackBy *ngFor="let hero of heroes">({{hero.id}}) {{hero.name}}</div>
+  <div #noTrackBy *ngFor="let hero of heroes">({{ hero.id }}) {{ hero.name }}</div>
 
-  <div id="noTrackByCnt" *ngIf="heroesNoTrackByCount" >
-    Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
+  <div id="noTrackByCnt" *ngIf="heroesNoTrackByCount">
+    Hero DOM elements change #{{ heroesNoTrackByCount }} without trackBy
   </div>
 </div>
 
 <p>with trackBy</p>
 <div class="box">
-  <div #withTrackBy *ngFor="let hero of heroes; trackBy: trackByHeroes">({{hero.id}}) {{hero.name}}</div>
+  <div #withTrackBy *ngFor="let hero of heroes; trackBy: trackByHeroes">({{ hero.id }}) {{ hero.name }}</div>
 
   <div id="withTrackByCnt" *ngIf="heroesWithTrackByCount">
-    Hero DOM elements change #{{heroesWithTrackByCount}} with trackBy
+    Hero DOM elements change #{{ heroesWithTrackByCount }} with trackBy
   </div>
 </div>
 
@@ -502,23 +506,23 @@ without NgModel
 <p>with trackBy and <em>semi-colon</em> separator</p>
 <div class="box">
   <div *ngFor="let hero of heroes; trackBy: trackByHeroes">
-    ({{hero.id}}) {{hero.name}}
+    ({{ hero.id }}) {{ hero.name }}
   </div>
 </div>
 
 <p>with trackBy and <em>comma</em> separator</p>
 <div class="box">
-  <div *ngFor="let hero of heroes, trackBy: trackByHeroes">({{hero.id}}) {{hero.name}}</div>
+  <div *ngFor="let hero of heroes, trackBy: trackByHeroes">({{ hero.id }}) {{ hero.name }}</div>
 </div>
 
 <p>with trackBy and <em>space</em> separator</p>
 <div class="box">
-  <div *ngFor="let hero of heroes trackBy: trackByHeroes">({{hero.id}}) {{hero.name}}</div>
+  <div *ngFor="let hero of heroes trackBy: trackByHeroes">({{ hero.id }}) {{ hero.name }}</div>
 </div>
 
 <p>with <em>generic</em> trackById function</p>
 <div class="box">
-  <div *ngFor="let hero of heroes, trackBy: trackById">({{hero.id}}) {{hero.name}}</div>
+  <div *ngFor="let hero of heroes, trackBy: trackById">({{ hero.id }}) {{ hero.name }}</div>
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -529,16 +533,16 @@ without NgModel
 <p>Pick your favorite hero</p>
 <div>
   <label for="hero-{{h}}" *ngFor="let h of heroes">
-    <input id="hero-{{h}}" type="radio" name="heroes" [(ngModel)]="currentHero" [value]="h">{{h.name}}
+    <input id="hero-{{h}}" type="radio" name="heroes" [(ngModel)]="currentHero" [value]="h">{{ h.name }}
   </label>
 </div>
 
 <div [ngSwitch]="currentHero.emotion">
-  <app-happy-hero    *ngSwitchCase="'happy'"    [hero]="currentHero"></app-happy-hero>
-  <app-sad-hero      *ngSwitchCase="'sad'"      [hero]="currentHero"></app-sad-hero>
+  <app-happy-hero *ngSwitchCase="'happy'" [hero]="currentHero"></app-happy-hero>
+  <app-sad-hero *ngSwitchCase="'sad'" [hero]="currentHero"></app-sad-hero>
   <app-confused-hero *ngSwitchCase="'confused'" [hero]="currentHero"></app-confused-hero>
-  <div *ngSwitchCase="'confused'">Are you as confused as {{currentHero.name}}?</div>
-  <app-unknown-hero  *ngSwitchDefault           [hero]="currentHero"></app-unknown-hero>
+  <div *ngSwitchCase="'confused'">Are you as confused as {{ currentHero.name }}?</div>
+  <app-unknown-hero *ngSwitchDefault [hero]="currentHero"></app-unknown-hero>
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -564,38 +568,38 @@ without NgModel
 <!-- inputs and output -->
 <hr><h2 id="inputs-and-outputs">Inputs and Outputs</h2>
 
-<img alt="icon" [src]="iconUrl"/>
+<img alt="icon" [src]="iconUrl" />
 <button type="button" (click)="onSave()">Save</button>
 
 <app-hero-detail [hero]="currentHero" (deleteRequest)="deleteHero($event)">
 </app-hero-detail>
 
 <div (myClick)="clickMessage2=$event" clickable>myClick2</div>
-{{clickMessage2}}
+{{ clickMessage2 }}
 
 <a class="to-toc" href="#toc">top</a>
 
 <!-- Pipes -->
 <hr><h2 id="pipes">Pipes</h2>
 
-<div>Title through uppercase pipe: {{title | uppercase}}</div>
+<div>Title through uppercase pipe: {{ title | uppercase }}</div>
 
 <!-- Pipe chaining: convert title to uppercase, then to lowercase -->
 <div>
   Title through a pipe chain:
-  {{title | uppercase | lowercase}}
+  {{ title | uppercase | lowercase }}
 </div>
 
 <!-- pipe with configuration argument => "February 25, 1970" -->
-<div>Birthdate: {{currentHero.birthdate | date:'longDate'}}</div>
+<div>Birthdate: {{ currentHero.birthdate | date:'longDate' }}</div>
 
-<div>{{currentHero | json}}</div>
+<div>{{ currentHero | json }}</div>
 
-<div>Birthdate: {{(currentHero.birthdate | date:'longDate') | uppercase}}</div>
+<div>Birthdate: {{ (currentHero.birthdate | date:'longDate') | uppercase }}</div>
 
 <div>
   <!-- pipe price to USD and display the $ symbol -->
-  <span>Price: </span>{{product.price | currency:'USD':'symbol'}}
+  <span>Price: </span>{{ product.price | currency:'USD':'symbol' }}
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -604,17 +608,16 @@ without NgModel
 <hr><h2 id="safe-navigation-operator">Safe navigation operator <em>?.</em></h2>
 
 <div>
-  The title is {{title}}
+  The title is {{ title }}
 </div>
 
 <div>
-  The current hero's name is {{currentHero.name}}
+  The current hero's name is {{ currentHero.name }}
 </div>
 
 <div>
-  The current hero's name is {{currentHero.name}}
+  The current hero's name is {{ currentHero.name }}
 </div>
-
 
 <!--
 The null hero's name is {{nullHero.name}}
@@ -624,17 +627,16 @@ See console log:
 -->
 
 <!--No hero, div not displayed, no error -->
-<div *ngIf="nullHero">The null hero's name is {{nullHero.name}}</div>
+<div *ngIf="nullHero">The null hero's name is {{ nullHero.name }}</div>
 
 <div>
-The null hero's name is {{nullHero && nullHero.name}}
+  The null hero's name is {{ nullHero && nullHero.name }}
 </div>
 
 <div>
   <!-- No hero, no problem! -->
-  The null hero's name is {{nullHero?.name}}
+  The null hero's name is {{ nullHero?.name }}
 </div>
-
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -644,7 +646,7 @@ The null hero's name is {{nullHero && nullHero.name}}
 <div>
   <!--No hero, no text -->
   <div *ngIf="hero">
-    The hero's name is {{hero!.name}}
+    The hero's name is {{ hero!.name }}
   </div>
 </div>
 
@@ -656,14 +658,14 @@ The null hero's name is {{nullHero && nullHero.name}}
 <div>
   <!-- Accessing an undeclared member -->
   <div>
-    The hero's marker is {{$any(hero).marker}}
+    The hero's marker is {{ $any(hero).marker }}
   </div>
 </div>
 
 <div>
   <!-- Accessing an undeclared member -->
   <div>
-    Undeclared members is {{$any(this).member}}
+    Undeclared members is {{ $any(this).member }}
   </div>
 </div>
 
@@ -674,8 +676,8 @@ The null hero's name is {{nullHero && nullHero.name}}
 <hr><h2 id="enums">Enums in binding</h2>
 
 <p>
-  The name of the Color.Red enum is {{Color[Color.Red]}}.<br>
-  The current color is {{Color[color]}} and its number is {{color}}.<br>
+  The name of the Color.Red enum is {{ Color[Color.Red] }}.<br>
+  The current color is {{ Color[color] }} and its number is {{ color }}.<br>
   <button type="button" [style.color]="Color[color]" (click)="colorToggle()">Enum Toggle</button>
 </p>
 

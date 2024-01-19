@@ -8,10 +8,18 @@ import { Hero } from './hero';
   selector: 'app-hero-form',
   templateUrl: './hero-form.component.html',
   imports: [ FormsModule ],
-  styles: [`
-    button { margin: 6px 0; }
-    #heroForm { border: 1px solid black; margin: 20px 0; padding: 8px; max-width: 350px; }
-  `]
+  styles: [ `
+    button {
+      margin: 6px 0;
+    }
+
+    #heroForm {
+      border: 1px solid black;
+      margin: 20px 0;
+      padding: 8px;
+      max-width: 350px;
+    }
+  ` ]
 })
 export class HeroFormComponent {
   @Input() hero!: Hero;
@@ -27,6 +35,6 @@ export class HeroFormComponent {
   }
 
   onSubmit(form: NgForm) {
-    this._submitMessage =  'Submitted. form value is ' + JSON.stringify(form.value);
+    this._submitMessage = 'Submitted. form value is ' + JSON.stringify(form.value);
   }
 }

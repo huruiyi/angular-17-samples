@@ -6,17 +6,17 @@ import { Hero } from './hero';
 @Component({
   standalone: true,
   selector: 'app-hero-detail',
-  inputs: ['hero'],
-  outputs: ['deleteRequest'],
-  styles: ['button {margin-left: 8px} div {margin: 8px 0} img {height:24px}'],
+  inputs: [ 'hero' ],
+  outputs: [ 'deleteRequest' ],
+  styles: [ 'button {margin-left: 8px} div {margin: 8px 0} img {height:24px}' ],
   template: `
-  <div>
-    <img src="{{heroImageUrl}}" alt="{{hero.name}}">
-    <span [style.text-decoration]="lineThrough">
-      {{prefix}} {{hero.name}}
+    <div>
+      <img src="{{heroImageUrl}}" alt="{{hero.name}}">
+      <span [style.text-decoration]="lineThrough">
+      {{ prefix }} {{ hero.name }}
     </span>
-    <button type="button" (click)="delete()">Delete</button>
-  </div>`
+      <button type="button" (click)="delete()">Delete</button>
+    </div>`
 })
 export class HeroDetailComponent {
   hero = new Hero(-1, '', 'Zzzzzzzz'); // default sleeping hero
@@ -39,23 +39,32 @@ export class HeroDetailComponent {
   standalone: true,
   selector: 'app-big-hero-detail',
   template: `
-  <div class="detail">
-    <img src="{{heroImageUrl}}" alt="{{hero.name}}">
-    <div><b>{{hero.name}}</b></div>
-    <div>Name: {{hero.name}}</div>
-    <div>Emotion: {{hero.emotion}}</div>
-    <div>Birthdate: {{hero.birthdate | date:'longDate'}}</div>
-    <div>Web: <a href="{{hero.url}}" target="_blank">{{hero.url}}</a></div>
-    <div>Rate/hr: {{hero.rate | currency:'EUR'}}</div>
-    <br clear="all">
-    <button type="button" (click)="delete()">Delete</button>
-  </div>
+    <div class="detail">
+      <img src="{{heroImageUrl}}" alt="{{hero.name}}">
+      <div><b>{{ hero.name }}</b></div>
+      <div>Name: {{ hero.name }}</div>
+      <div>Emotion: {{ hero.emotion }}</div>
+      <div>Birthdate: {{ hero.birthdate | date:'longDate' }}</div>
+      <div>Web: <a href="{{hero.url}}" target="_blank">{{ hero.url }}</a></div>
+      <div>Rate/hr: {{ hero.rate | currency:'EUR' }}</div>
+      <br clear="all">
+      <button type="button" (click)="delete()">Delete</button>
+    </div>
   `,
-  imports: [CurrencyPipe, DatePipe],
-  styles: [`
-    .detail { border: 1px solid black; padding: 4px; max-width: 450px; }
-    img     { float: left; margin-right: 8px; height: 100px; }
-  `]
+  imports: [ CurrencyPipe, DatePipe ],
+  styles: [ `
+    .detail {
+      border: 1px solid black;
+      padding: 4px;
+      max-width: 450px;
+    }
+
+    img {
+      float: left;
+      margin-right: 8px;
+      height: 100px;
+    }
+  ` ]
 })
 export class BigHeroDetailComponent extends HeroDetailComponent {
 

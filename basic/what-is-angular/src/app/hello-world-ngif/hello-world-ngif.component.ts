@@ -5,6 +5,7 @@ import { NgIf } from '@angular/common';
   standalone: true,
   selector: 'hello-world-ngif',
   templateUrl: './hello-world-ngif.component.html',
+  styleUrls:['./hello-world-ngif.component.css'],
   imports: [NgIf],
 })
 export class HelloWorldNgIfComponent {

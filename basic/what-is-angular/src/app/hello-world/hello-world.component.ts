@@ -4,8 +4,10 @@ import { Component } from '@angular/core';
   standalone: true,
   selector: 'hello-world',
   template: `
-    <h2>Hello World</h2>
-    <p>This is my first component!</p>
+    <fieldset>
+      <legend>hello-world.component.ts</legend>
+      <label>Hello, World!</label>
+    </fieldset>
   `,
 })
 export class HelloWorldComponent {

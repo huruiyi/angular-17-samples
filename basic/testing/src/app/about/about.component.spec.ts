@@ -12,9 +12,9 @@ let fixture: ComponentFixture<AboutComponent>;
 describe('AboutComponent (highlightDirective)', () => {
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [AboutComponent],
-      providers: [provideHttpClient(), TwainService, UserService],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [ AboutComponent ],
+      providers: [ provideHttpClient(), TwainService, UserService ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     }).createComponent(AboutComponent);
     fixture.detectChanges(); // initial binding
   });

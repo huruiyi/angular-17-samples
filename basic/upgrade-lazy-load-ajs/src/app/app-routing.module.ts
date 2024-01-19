@@ -6,7 +6,7 @@ import { App404Component } from './app404/app404.component';
 
 // Match any URL that starts with `users`
 export function isAngularJSUrl(url: UrlSegment[]) {
-  return url.length > 0 && url[0].path.startsWith('users') ? ({consumed: url}) : null;
+  return url.length > 0 && url[0].path.startsWith('users') ? ( { consumed: url } ) : null;
 }
 
 export const routes: Routes = [
@@ -21,7 +21,8 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

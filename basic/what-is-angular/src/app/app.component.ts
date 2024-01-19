@@ -19,6 +19,12 @@ import { HelloWorldBindingsComponent } from './hello-world-bindings/hello-world-
     HelloWorldInterpolationComponent,
     HelloWorldBindingsComponent,
   ],
+  styles:[
+   `h5{
+     background-color: #bddbfa;
+     color: orangered;
+   }`
+  ]
 })
 export class AppComponent {
 }

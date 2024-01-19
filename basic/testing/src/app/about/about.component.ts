@@ -10,6 +10,7 @@ import { TwainComponent } from '../twain/twain.component';
     <h3>Quote of the day:</h3>
     <twain-quote></twain-quote>
   `,
-  imports: [TwainComponent, HighlightDirective],
+  imports: [ TwainComponent, HighlightDirective ],
 })
-export class AboutComponent {}
+export class AboutComponent {
+}

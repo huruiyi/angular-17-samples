@@ -7,7 +7,6 @@ import { AngularJSComponent } from './angular-js/angular-js.component';
 import { HomeComponent } from './home/home.component';
 import { App404Component } from './app404/app404.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +18,7 @@ import { App404Component } from './app404/app404.component';
     BrowserModule,
     AppRoutingModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}

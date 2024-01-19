@@ -2,13 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgForm, FormsModule } from '@angular/forms';
 
-
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [ CommonModule, FormsModule ],
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
 
@@ -33,7 +32,7 @@ export class AppComponent {
   <!-- Attempting to access ref2 from outside the above template doesn't work. -->
   <span>Value: {{ ref2?.value }}</span>`;
 
-    public ngForExample = `<ng-container *ngFor="let i of [1,2]">
+  public ngForExample = `<ng-container *ngFor="let i of [1,2]">
     <input #ref type="text" [value]="i" />
   </ng-container>
 
@@ -44,7 +43,10 @@ export class AppComponent {
 
   @ViewChild('itemForm', { static: false }) form!: NgForm;
 
-  get submitMessage() { return this._submitMessage; }
+  get submitMessage() {
+    return this._submitMessage;
+  }
+
   private _submitMessage = '';
 
   onSubmit(form: NgForm) {
@@ -52,11 +54,11 @@ export class AppComponent {
   }
 
   callPhone(value: string) {
-    console.warn(`Calling ${value} ...`);
+    console.warn(`Calling ${ value } ...`);
   }
 
   callFax(value: string) {
-    console.warn(`Faxing ${value} ...`);
+    console.warn(`Faxing ${ value } ...`);
   }
 
   log(ref3: any) {

@@ -11,17 +11,17 @@ export class ClickDirective {
 
   constructor(el: ElementRef) {
     el.nativeElement
-      .addEventListener('click', (event: Event) => {
-        this.toggle = !this.toggle;
-        this.clicks.emit(this.toggle ? 'Click!' : '');
-      });
+    .addEventListener('click', (event: Event) => {
+      this.toggle = !this.toggle;
+      this.clicks.emit(this.toggle ? 'Click!' : '');
+    });
   }
 }
 
 @Directive({
   standalone: true,
   selector: '[myClick2]',
-  outputs: ['clicks:myClick']  // propertyName:alias
+  outputs: [ 'clicks:myClick' ]  // propertyName:alias
 })
 export class ClickDirective2 {
   clicks = new EventEmitter<string>();
@@ -29,9 +29,9 @@ export class ClickDirective2 {
 
   constructor(el: ElementRef) {
     el.nativeElement
-      .addEventListener('click', (event: Event) => {
-        this.toggle = !this.toggle;
-        this.clicks.emit(this.toggle ? 'Click2!' : '');
-      });
+    .addEventListener('click', (event: Event) => {
+      this.toggle = !this.toggle;
+      this.clicks.emit(this.toggle ? 'Click2!' : '');
+    });
   }
 }

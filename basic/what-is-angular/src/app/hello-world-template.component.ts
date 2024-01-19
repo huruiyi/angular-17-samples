@@ -4,10 +4,20 @@ import { Component } from '@angular/core';
   standalone: true,
   selector: 'hello-world-template',
   template: `
-    <h2>Hello World Template</h2>
-    <button type="button" (click)="onEditClick()">Make text editable!</button>
-    <p [contentEditable]="canEdit">{{ message }}</p>
+    <fieldset>
+      <legend>
+        hello-world-template.component.ts
+      </legend>
+      <label>Hello World Template！！</label>
+      <button type="button" (click)="onEditClick()">Make text editable!</button>
+      <p class="content-editable" [contentEditable]="canEdit">{{ message }}</p>
+    </fieldset>
   `,
+  styles: [
+    `.content-editable {
+      border: 2px solid orangered;
+    }`
+  ]
 })
 export class HelloWorldTemplateComponent {
   message = 'I am read only!';
