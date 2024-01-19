@@ -5,11 +5,12 @@ import { OptionalService } from '../optional.service';
   standalone: true,
   selector: 'app-optional',
   templateUrl: './optional.component.html',
-  styleUrls: ['./optional.component.css']
+  styleUrls: [ './optional.component.css' ]
 })
 
 export class OptionalComponent {
-  constructor(@Optional() public optional?: OptionalService) {}
+  constructor(@Optional() public optional?: OptionalService) {
+  }
 }
 
 // The OptionalService isn't provided here, in the @Injectable()

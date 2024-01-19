@@ -6,14 +6,15 @@ import { HostChildComponent } from '../host-child/host-child.component';
   standalone: true,
   selector: 'app-host',
   templateUrl: './host.component.html',
-  styleUrls: ['./host.component.css'],
+  styleUrls: [ './host.component.css' ],
   //  provide the service
-  providers: [{ provide: FlowerService, useValue: { emoji1: '🌷' } }],
-  imports: [HostChildComponent]
+  providers: [ { provide: FlowerService, useValue: { emoji1: '🌷' } } ],
+  imports: [ HostChildComponent ]
 })
 export class HostComponent {
   // use @Host() in the constructor when injecting the service
-  constructor(@Host() @Optional() public flower?: FlowerService) { }
+  constructor(@Host() @Optional() public flower?: FlowerService) {
+  }
 
 }
 

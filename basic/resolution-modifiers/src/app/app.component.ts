@@ -26,5 +26,7 @@ import { SkipselfComponent } from './skipself/skipself.component';
 })
 export class AppComponent {
   name = 'Angular';
-  constructor(public flower: FlowerService, public leaf: LeafService) {}
+
+  constructor(public flower: FlowerService, public leaf: LeafService) {
+  }
 }

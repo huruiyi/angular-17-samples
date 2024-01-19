@@ -5,10 +5,11 @@ import { LeafService } from '../leaf.service';
   standalone: true,
   selector: 'app-self-no-data',
   templateUrl: './self-no-data.component.html',
-  styleUrls: ['./self-no-data.component.css']
+  styleUrls: [ './self-no-data.component.css' ]
 })
 export class SelfNoDataComponent {
-  constructor(@Self() @Optional() public leaf?: LeafService) { }
+  constructor(@Self() @Optional() public leaf?: LeafService) {
+  }
 }
 
 

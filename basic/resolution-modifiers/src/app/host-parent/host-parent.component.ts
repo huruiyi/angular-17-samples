@@ -7,8 +7,8 @@ import { HostComponent } from '../host/host.component';
   standalone: true,
   selector: 'app-host-parent',
   templateUrl: './host-parent.component.html',
-  styleUrls: ['./host-parent.component.css'],
-  providers: [{
+  styleUrls: [ './host-parent.component.css' ],
+  providers: [ {
     provide: FlowerService,
     useValue: {
       emoji1: '🌺💖😜🤞😁😐😙😉😆😍😘🥰😗😊😎😄😃🤣😂🤷‍♀️🤷‍♂️✌️😢🎶😀😀😁😂😶‍🌫️🤐😯😪',
@@ -22,8 +22,8 @@ import { HostComponent } from '../host/host.component';
       emoji9: '🦤🦉🦚🦩🐧🐥🐤🐣🦇🦋🦗🪱🪰🦟🐛🐌🐜🪳🐝🪲🐞🦂🧞🧞‍♂️🧞‍♀️🦠🕸️🕷️🧟‍♀️🧟‍♂️🧟🧌',
       emojiA: '🗣️👤🦷🦴👀👁️🫂👥👅👄🫦🧠🫀🫁⛷️🤺👣🦿🦾☮️☪️🕉️☸️✡️🔯☯️♌♋♍♌♎♏'
     }
-  }],
-  imports: [HostComponent]
+  } ],
+  imports: [ HostComponent ]
 })
 export class HostParentComponent {
 

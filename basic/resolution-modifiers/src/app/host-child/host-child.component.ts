@@ -5,8 +5,9 @@ import { FlowerService } from '../flower.service';
   standalone: true,
   selector: 'app-host-child',
   templateUrl: './host-child.component.html',
-  styleUrls: ['./host-child.component.css']
+  styleUrls: [ './host-child.component.css' ]
 })
 export class HostChildComponent {
-  constructor(public flower: FlowerService) { }
+  constructor(public flower: FlowerService) {
+  }
 }
