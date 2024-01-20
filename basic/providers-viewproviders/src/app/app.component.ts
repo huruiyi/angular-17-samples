@@ -10,10 +10,11 @@ import { InspectorComponent } from './inspector/inspector.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ],
-  imports: [ChildComponent, InspectorComponent]
+  imports: [ ChildComponent, InspectorComponent ]
 })
-export class AppComponent  {
-  constructor(public flower: FlowerService, public animal: AnimalService) {}
+export class AppComponent {
+  constructor(public flower: FlowerService, public animal: AnimalService) {
+  }
 }
 
 // When using @Host() together with @SkipSelf() in

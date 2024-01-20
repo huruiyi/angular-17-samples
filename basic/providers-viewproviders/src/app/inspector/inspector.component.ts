@@ -6,8 +6,9 @@ import { AnimalService } from '../animal.service';
   standalone: true,
   selector: 'app-inspector',
   templateUrl: './inspector.component.html',
-  styleUrls: ['./inspector.component.css']
+  styleUrls: [ './inspector.component.css' ]
 })
 export class InspectorComponent {
-  constructor(public flower: FlowerService, public animal: AnimalService) { }
+  constructor(public flower: FlowerService, public animal: AnimalService) {
+  }
 }

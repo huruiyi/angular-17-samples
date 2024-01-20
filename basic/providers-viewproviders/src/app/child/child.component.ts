@@ -7,16 +7,17 @@ import { InspectorComponent } from '../inspector/inspector.component';
   standalone: true,
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css'],
+  styleUrls: [ './child.component.css' ],
   // provide services
-  providers: [{ provide: FlowerService, useValue: { emoji: '🌻' } }],
-  viewProviders: [{ provide: AnimalService, useValue: { emoji: '🐶' } }],
-  imports: [InspectorComponent]
+  providers: [ { provide: FlowerService, useValue: { emoji: '🌻' } } ],
+  viewProviders: [ { provide: AnimalService, useValue: { emoji: '🐶' } } ],
+  imports: [ InspectorComponent ]
 })
 
 export class ChildComponent {
   // inject service
-  constructor( public flower: FlowerService, public animal: AnimalService) { }
+  constructor(public flower: FlowerService, public animal: AnimalService) {
+  }
 
   // viewProviders ensures that only the view gets to see this.
   // With the AnimalService in the viewProviders, the
