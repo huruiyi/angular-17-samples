@@ -10,7 +10,7 @@
 <h3>Parent component receiving value via &#64;Output()</h3>
 
 <ul>
-  <li *ngFor="let item of items">{{item}}</li>
+  <li *ngFor="let item of items">{{ item }}</li>
 </ul>
 
 <hr>
@@ -33,7 +33,6 @@
   (buyEvent)="buyClearanceItem($event)">
 </app-in-the-metadata>
 
-
 <hr>
 
 <h2>Aliasing Inputs and Outputs</h2>
@@ -48,6 +47,6 @@
 
 <h2>Wishlist:</h2>
 <ul>
-  <li *ngFor="let wish of wishlist">{{wish}}</li>
+  <li *ngFor="let wish of wishlist">{{ wish }}</li>
 </ul>
 

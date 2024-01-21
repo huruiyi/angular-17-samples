@@ -4,14 +4,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   selector: 'app-aliasing',
   template: `
-    <p>Save for later item: {{input1}}</p>
+    <p>Save for later item: {{ input1 }}</p>
     <button type="button" (click)="saveIt()"> Save for later</button>
 
-    <p>Item for wishlist: {{input2}}</p>
+    <p>Item for wishlist: {{ input2 }}</p>
     <button type="button" (click)="wishForIt()"> Add to wishlist</button>
   `,
-  inputs: ['input1: saveForLaterItem'], // propertyName:alias
-  outputs: ['outputEvent1: saveForLaterEvent']
+  inputs: [ 'input1: saveForLaterItem' ], // propertyName:alias
+  outputs: [ 'outputEvent1: saveForLaterEvent' ]
 })
 export class AliasingComponent {
 
